@@ -1,4 +1,16 @@
 // v0.1 terminada funciona la generacion para un solo campo por el momento :D
+let contador = 1;
+function addInput() {
+  document.getElementById("campos").innerHTML +=
+    '<div class="form-group"><label for="modelo">Campo ' +
+    ++contador +
+    '</label><input type="text" class="form-control" name="campo' +
+    contador +
+    '" id="campo' +
+    contador +
+    '" aria-describedby="helpId" placeholder="Escribe aquí..."></div>';
+}
+
 function convertir() {
   let sql = document.getElementById("sql").value;
 
@@ -31,21 +43,39 @@ function analizar(item) {
     ? console.log("no se reconoce un codigo sql de insercion de datos correcto")
     : console.log("todo ok");
 
-  let table = sqlCode[2];
+  let table = sqlCode[2].replaceAll("`", "");
 
   parametros = filterParams(parametros);
 
+  parametros = parametros.split(",");
+  let campo = "";
+  let laravelCode = "";
+  //
+  let string = table + '::create(["';
+
+  for (let i = 0; i < parametros.length; i++) {
+    campo = "campo" + (i + 1);
+
+    if (i + 1 != parametros.length) {
+      laravelCode +=
+        document.getElementById(campo).value +
+        '" => ' +
+        parametros[i].toString().replaceAll("'", '"') +
+        ',"';
+    } else {
+      laravelCode +=
+        document.getElementById(campo).value +
+        '" => ' +
+        parametros[i].toString().replaceAll("'", '"');
+    }
+  }
+
   document.getElementById("resultado").innerHTML +=
-    table +
-    '::create(["' +
-    document.getElementById("modelo").value +
-    '" => ' +
-    parametros.toString().replaceAll("'", '"') +
-    "]);<br>";
+    string + laravelCode + "]);<br>";
 }
 
 function filterParams(item) {
-  item = item.toString().replace("null,", "");
+  item = item.replace("null,", "");
 
   return item;
 }
