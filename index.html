@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       
+    <h1>Covertidor de SQL Inserts a Seeders laravel</h1>
+
+        <div class="form-group">
+          <label for="modelo">Ingresa el nombre de tu campo 1</label>
+          <input type="text" class="form-control" name="modelo" id="modelo" aria-describedby="helpId" placeholder="Escribe aquí...">
+       
+        </div>
+
+
+<div class="form-group">
+  <label for="">Escribe los inserts en SQL</label>
+  <textarea class="form-control" name="sql" id="sql" rows="3">INSERT INTO departamentos VALUES (null, 'Alta Verapaz');
+    INSERT INTO departamentos VALUES (null, 'Baja Verapaz');
+    INSERT INTO departamentos VALUES (null, 'Chimaltenango');
+    INSERT INTO departamentos VALUES (null, 'Chiquimula');</textarea>
+</div>
+<a onClick="convertir()">Convertir</a>
+
+<p id="resultado" ></p>
+
+
+        <script src="app/app.js" async defer></script>
+    </body>
+</html>
