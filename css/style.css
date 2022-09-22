@@ -91,7 +91,7 @@ color: whitesmoke;
 
 
 }
-.btn-add-campo{
+.btn-add-campo:hover{
     cursor: pointer;
     background-color: darkred;
 
