@@ -2,7 +2,7 @@
 let contador = 1;
 function addInput() {
   document.getElementById("campos").innerHTML +=
-    '<div class="form-group"><label for="modelo">Campo ' +
+    '<div class="element-campos"><label for="modelo">Campo ' +
     ++contador +
     '</label><input type="text" class="form-control" name="campo' +
     contador +

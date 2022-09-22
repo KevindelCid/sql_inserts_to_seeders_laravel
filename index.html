@@ -7,26 +7,42 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
 
-       
-    <h1>Covertidor de SQL Inserts a Seeders laravel</h1>
+
+    <body>
+      
+  
+     <header class="header-container">
+        
+    <h1 class="title">Covertidor de SQL Inserts a Seeders laravel</h1>
     <p>Funcionando unicamente con formato simple de Insert SQL ejemplo: INSERT INTO nombre_tabla VALUES ("dato",1,"dato2");</p>
 
-       
-        <div id="campos" >
-          <div class="form-group">
-            <label for="modelo">Campo 1</label>
+     </header>
+     <hr>
+      <section class="function-container">
+
+        <input type="button" class="btn btn-add-campo" value="agregar campo" onclick="addInput()" >
+
+        <small>Aqui debes poner el nombre del campo al que irá vinculado el primer dato VALUES(campo1 ...) </small>
+
+        <div id="campos" class="campos-container">
+          
+          <div  class="element-campos">   
+            <label for="modelo" >Campo 1</label>
             <input type="text" class="form-control" name="campo1" id="campo1" aria-describedby="helpId" placeholder="Escribe aquí...">
-         
           </div>
+          
+
         </div>
-        <input type="button" value="agregar campo" onclick="addInput()" >
+
+      </section>
+       
 
 
 <div class="form-group">
-  <label for="">Escribe los inserts en SQL</label>
+  <label for="sql">Escribe los inserts en SQL</label>
   <textarea class="form-control" name="sql" id="sql" rows="3"></textarea>
 </div>
 <a onClick="convertir()">Convertir</a>

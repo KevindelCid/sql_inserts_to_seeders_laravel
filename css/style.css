@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.campos-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.function-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+.btn{
+    padding: 10px;
+    max-width: 300px;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
+-webkit-box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
+-moz-box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
+}
+.btn-add-campo{
+background-color: crimson;
+color: whitesmoke;
+
+
+}
+.element-campos{
+    display: flex;
+    flex-direction: column;
+}
