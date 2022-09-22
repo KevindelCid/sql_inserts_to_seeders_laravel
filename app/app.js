@@ -2,13 +2,13 @@
 let contador = 1;
 function addInput() {
   document.getElementById("campos").innerHTML +=
-    '<div class="element-campos"><label for="modelo">Campo ' +
+    '<div class="element-campos"><label for="modelo">Field ' +
     ++contador +
-    '</label><input type="text" class="form-control" name="campo' +
+    '</label><input type="text" class="form-control input-field" name="campo' +
     contador +
     '" id="campo' +
     contador +
-    '" aria-describedby="helpId" placeholder="Escribe aquí..."></div>';
+    '" aria-describedby="helpId" placeholder="Write here..."></div>';
 }
 
 function convertir() {
