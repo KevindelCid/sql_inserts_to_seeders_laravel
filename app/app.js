@@ -51,7 +51,9 @@ function analizar(item) {
   let campo = "";
   let laravelCode = "";
   //
-  let string = table + '::create(["';
+  
+
+  let string = table[0].toUpperCase() + table.substring(1) + '::create(["';
 
   for (let i = 0; i < parametros.length; i++) {
     campo = "campo" + (i + 1);
