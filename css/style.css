@@ -1,112 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;800&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
-    max-width: 1600px;
-    margin-right: auto;
-    margin-left: auto;
-    font-family: 'Proza Libre', sans-serif;
+body {
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Proza Libre", sans-serif;
+}
+li {
+  list-style: none;
+}
+.title {
+  text-align: center;
+}
+.nota {
+  text-align: center;
+}
+.logo {
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 342px;
+  gap: 40px;
+  background-color: crimson;
+  color: whitesmoke;
+  box-shadow: -2px 2px 32px -5px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: -2px 2px 32px -5px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: -2px 2px 32px -5px rgba(0, 0, 0, 0.43);
+}
+.input-field {
+  padding: 8px;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(139, 139, 139);
+}
+.convert-zone-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.campos-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
 }
-.title{
-    text-align: center;
+.insert-code-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.nota{
-    text-align: center;
+.result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.logo{
-    width: 100px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 10px;
+.function-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: flex-start;
 }
-.header-container{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    background-color: crimson;
-    color: whitesmoke;
-    box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
--webkit-box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
--moz-box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
+textarea {
+  max-width: 700px;
+  max-height: 200px;
+  min-width: 300px;
+  min-height: 300px;
 }
-.input-field{
-    padding: 8px;
-    border-radius: .5rem;
-    border: 1px solid rgb(139, 139, 139);
+.btn {
+  padding: 10px;
+  max-width: 300px;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: -2px 2px 32px -5px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: -2px 2px 32px -5px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: -2px 2px 32px -5px rgba(0, 0, 0, 0.43);
 }
-.convert-zone-container{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.btn-add-campo {
+  background-color: crimson;
+  color: whitesmoke;
+}
+.btn-add-campo:hover {
+  cursor: pointer;
+  background-color: darkred;
+}
+.btn-convert:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+.btn-convert {
+  background-color: crimson;
+  color: whitesmoke;
+}
+.element-campos {
+  display: flex;
+  flex-direction: column;
+}
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  height: 5rem;
+  align-items: center;
+
+  font-size: 38px;
+  background-color: crimson;
+  min-width: 350px;
+  position: inherit;
+  max-width: 1600px;
+  margin-top: 40px;
+}
+.main {
+  padding: 40px;
+  min-width: 350px;
+}
+.icon {
+  color: whitesmoke;
+}
+.icon:hover {
+  cursor: pointer;
 }
 
+@media only screen and (min-width: 600px) {
+  textarea {
+    min-width: 500px;
+  }
+}
 
-.campos-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: flex-start ;
-}
-.insert-code-container{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.result-container{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-}
-.function-container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-    justify-content: flex-start;
-}
-textarea{
-    width: 700px;
-    height: 200px;
-}
-.btn{
-    padding: 10px;
-    max-width: 300px;
-    border: none;
-    border-radius: .5rem;
-    box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
--webkit-box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
--moz-box-shadow: -2px 2px 32px -5px rgba(0,0,0,0.43);
-}
-.btn-add-campo{
-background-color: crimson;
-color: whitesmoke;
-
-
-}
-.btn-add-campo:hover{
-    cursor: pointer;
-    background-color: darkred;
-
-    }
-.btn-convert:hover{
-    background-color: crimson;
-cursor: pointer;
-    
-    
-    }
-.btn-convert{
-    background-color: darkred;
-    color: whitesmoke; 
-}
-.element-campos{
-    display: flex;
-    flex-direction: column;
+@media only screen and (min-width: 800px) {
+  textarea {
+    min-width: 650px;
+  }
 }

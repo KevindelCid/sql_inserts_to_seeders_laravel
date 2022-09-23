@@ -1,85 +1,108 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SQL to LARAVEL Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SQL to LARAVEL Converter</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/style.css">
-</head>
+  <body>
+    <header class="header-container">
+      <img
+        class="logo"
+        src="https://i.postimg.cc/854xcvt9/logowhite.png"
+        alt="sql to laravel"
+      />
+      <h1 class="title">SQL to LARAVEL Converter</h1>
+      <small class="nota">
+        only works with a insert SQL like: INSERT INTO table_name VALUES
+        ("dato",55,"dato2");
+      </small>
+    </header>
+    <main class="main">
+      <section class="function-container">
+        <small>
+          Instructions:
+          <ul>
+            <li>
+              Create as many fields as necessary to insert data into your table
+            </li>
+            <li>
+              Write the name of the fields that your SQL code contains within
+              the inputs that you just generated
+            </li>
+            <li>Paste the SQL code in the textarea and voila!</li>
+            <li>Hit the "Convert" button</li>
+          </ul>
+        </small>
 
+        <button type="button" class="btn btn-add-campo" onclick="addInput()">
+          <i class="fa-solid fa-plus"></i> Add sql field
+        </button>
 
-<body>
+        <div id="campos" class="campos-container">
+          <div class="element-campos">
+            <label for="campo1">Field 1</label>
+            <input
+              type="text"
+              class="form-control input-field"
+              name="campo1"
+              id="campo1"
+              aria-describedby="helpId"
+              placeholder="Write here..."
+            />
+          </div>
+        </div>
+        <div class="convert-zone-container">
+          <div class="insert-code-container">
+            <label for="sql">Write your SQL Inserts:</label>
+            <textarea
+              class="form-control texareainput"
+              name="sql"
+              id="sql"
+              rows="3"
+            ></textarea>
 
+            <a class="btn btn-convert" onClick="convertir()"
+              ><i class="fa-solid fa-wrench"></i> Convert</a
+            >
+          </div>
 
-  <header class="header-container">
-    <img class="logo" src="https://i.postimg.cc/854xcvt9/logowhite.png" alt="sql to laravel">
-    <h1 class="title">SQL to LARAVEL Converter</h1>
-    <small class="nota">
-      only works with a insert SQL like: INSERT INTO table_name VALUES ("dato",55,"dato2");
-    </small>
+          <div class="result-container">
+            <label for="sql">Your Laravel Code:</label>
+            <textarea name="result" id="resultado"></textarea>
+            <!-- <p id="resultado"></p> -->
+          </div>
+        </div>
+      </section>
+    </main>
 
-  </header>
+    <footer class="footer-container">
+      <a class="icon" href="https://github.com/KevindelCid" target="_blank"
+        ><i class="fa-brands fa-github"></i
+      ></a>
+      <a
+        class="icon"
+        href="https://linkedin.com/in/kevindelcidf"
+        target="_blank"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+      <a class="icon" href="mailto:kevindelcid731@gmail.com" target="_blank"
+        ><i class="fa-sharp fa-solid fa-envelope"></i
+      ></a>
+    </footer>
 
-  <section class="function-container">
-    <small>
-      Instructions:
-      <ul>
-        <li>Create as many fields as necessary to insert data into your table</li>
-        <li>Write the name of the fields that your SQL code contains within the inputs that you just generated</li>
-        <li>Paste the SQL code in the textarea and voila!</li>
-        <li>Hit the "Convert" button</li>
-      </ul>
-    </small>
-
-    <button type="button" class="btn btn-add-campo" onclick="addInput()"><i class="fa-solid fa-plus"></i> Add sql
-      field</button>
-
-
-
-    <div id="campos" class="campos-container">
-
-      <div class="element-campos">
-        <label for="campo1">Field 1</label>
-        <input type="text" class="form-control input-field" name="campo1" id="campo1" aria-describedby="helpId"
-          placeholder="Write here...">
-      </div>
-
-
-    </div>
-<div class="convert-zone-container">
-
-
-  
-  <div class="insert-code-container">
-    <label for="sql">Write your SQL Inserts:</label>
-    <textarea class="form-control texareainput" name="sql" id="sql" rows="3"></textarea>
-
-    <a class="btn btn-convert" onClick="convertir()"><i class="fa-solid fa-wrench"></i> Convert</a>
-  </div>
-  
-  <div class="result-container">
-    <label for="sql">Your Laravel Code:</label>
-<textarea name="result" id="resultado" ></textarea>
-    <!-- <p id="resultado"></p> -->
-  </div>
-</div>
-    
-
-  </section>
-
-
-
-
-
-
-  <script src="app/app.js" async defer></script>
-</body>
-
+    <script src="app/app.js" async defer></script>
+  </body>
 </html>
