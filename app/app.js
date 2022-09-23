@@ -71,7 +71,7 @@ function analizar(item) {
   }
 
   document.getElementById("resultado").innerHTML +=
-    string + laravelCode + "]);<br>";
+    string + laravelCode + "]);\n"
 }
 
 function filterParams(item) {
